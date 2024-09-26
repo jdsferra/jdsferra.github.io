@@ -1,0 +1,8 @@
+---
+title: "Blog"
+listing:
+  contents: posts #match name of posts directory
+  type: default
+  sort: "date desc"
+  categories: true
+---
