@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "You’re Not Behind, You’re Not Alone\n\n\n\n\n\n\nEducation\n\n\n\nSome advice and words of encouragement to people studying in an online bootcamp.\n\n\n\n\n\nSep 26, 2024\n\n\nJoe Sferra\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Joe Sferra",
+    "section": "",
+    "text": "Welcome to my website. I’m looking forward to populating this with thoughts about data, coding, problem-solving, teaching, and more!\nThis website was made with Quarto."
+  },
+  {
+    "objectID": "posts/2024-09-26-notbehind-notalone/index.html",
+    "href": "posts/2024-09-26-notbehind-notalone/index.html",
+    "title": "You’re Not Behind, You’re Not Alone",
+    "section": "",
+    "text": "During my career as a music theory professor, I saw the same freshmen in my classroom five days a week. Our classroom, inevitably, became the site not just of learning a difficult subject at a fast pace, but also of discussions about what strategies could help you do that. As a Data Science at NYCDSA, I’ve continued to rely on these strategies and wanted to share some of them with you as you a coding bootcamp. Writing these thoughts out, I found all of them revolving around two major ideas: 1. You’re not behind. 2. You’re not alone."
+  },
+  {
+    "objectID": "posts/2024-09-26-notbehind-notalone/index.html#youre-not-behind",
+    "href": "posts/2024-09-26-notbehind-notalone/index.html#youre-not-behind",
+    "title": "You’re Not Behind, You’re Not Alone",
+    "section": "You’re Not Behind",
+    "text": "You’re Not Behind\nWhen you first see the extent of a bootcamp curriculum, you may feel overwhelmed. It has to be that wide to address all the foundational knowledge for today’s tech stacks and job market. With so much to learn, it’s easy to feel like you are always behind.\nI’ve discovered in my chats with former and current boot campers that everyone feels behind at some point. The truth is that while everyone in a cohort sometimes feels behind, they are also ahead of and alongside each other in various ways. These differences come from our diverse backgrounds, bringing prior strengths and skills that contribute to our understanding of data science differently. Virtual cohorts allows a great diversity of backgrounds in your community, and we can all learn from each other.\nAfter you start, you’ll find that your background will help you grasp some of the lessons relatively easily. Whether it’s the stats, the coding, domain knowledge, or communication skills, your experiences will help you pick up on certain parts of the curriculum more quickly than others. The others in your cohort will feel themselves as behind you at some point in the program, just like when you feel behind them. That we don’t have the same talents doesn’t mean the ones we have are any less valuable. As a musician, I always felt like I couldn’t play as fast and as high on my clarinet as my peers, but I could learn songs by ear and improvise better than a lot of them. In the same way, you’ll find aspects of the curriculum where you shine as long as you keep at it!\nMake the most of the experience and strike the right balance between feeling behind and feeling like you already know the material. When a session feels too advanced, think of it as a sort of heads-up about vocabulary and concepts that will come up in your career. When more basic classes feel too easy, think of it as a chance to solidify what you’ve been learning.\nI confided in NYCDSA’s director that I felt worried about falling behind in the program, and she comforted me by encouraging me to reframe my “timeline” from the weeks of the bootcamp to time I needed for “learning data science well and using it in my new career”. On that path, none of us are behind."
+  },
+  {
+    "objectID": "posts/2024-09-26-notbehind-notalone/index.html#youre-not-alone",
+    "href": "posts/2024-09-26-notbehind-notalone/index.html#youre-not-alone",
+    "title": "You’re Not Behind, You’re Not Alone",
+    "section": "You’re Not Alone",
+    "text": "You’re Not Alone\nOnline instruction formats allow incredible flexibility and global collaboration. It’s easy to feel isolated, though, and that feeling can depress you and slow your learning. That’s why I urge you to capitalize on the synchronous portions of your program like the office hours and meetings with mentors. Be proactive about coming to live sessions. Turn your camera on, say “Hi”, ask questions, and message people who attended. Reaching out helps you feel connected and human as you learn, and the people at these sessions may become collaborators, coworkers, or friends in the coming years. Nearly everyone I’ve reached out to for advice on domain knowledge or help with a project has been willing to meet and chat.\nHelping out doesn’t necessarily mean teaching: it can just mean lending support. For example, I joined a study group that doesn’t even talk about the material; we just come together virtually on Zoom with our cameras on to keep us motivated and focused. You’re less likely to allow yourself to procrastinate if you’ll get caught! Even in a group like that, I know that I’m not alone and that I have people I can root for as they cheer me on, too.\nIf you keep at the front of your mind that you’re neither behind nor alone, you’ll be set up for staying on track. These are long-term goals, so think about where you want to end up and stick with it. Happy studying!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Data professional finishing my fellowship at NYC Data Science Academy. I am working on a capstone project to provide a report card on the health of a business via documenting executive turnover. Experienced in SQL, Python, and R.\nI grew up in Ohio and earned a PhD in music composition at SUNY-Stony Brook. Over eight years, I taught music theory and composition at Stony Brook, Earlham, Vassar, SUNY-Potsdam, and the Cleveland Institute of Music. I presented at six academic conferences, published three peer-reviewed works, and was featured as a clarinetist on two professional albums. I now live in the New York metropolitan area.\nMy background as a musician and teacher means that I have a unique approach to problem-solving that combines creativity and analytical skills. I have a proven record of translating complex ideas into concrete solutions for diverse audiences. Brainstorming and collaborating are some of my favorite things to do.\nYou can view my coding projects on Github and blog posts about these projects here.\nFind me on LinkedIn!"
+  }
+]
