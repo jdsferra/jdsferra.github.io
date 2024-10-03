@@ -2,6 +2,6 @@
 title: "Joe Sferra"
 ---
 
-Welcome to my website. I'm looking forward to populating this with thoughts about data, coding, problem-solving, teaching, and more!
+Welcome to my new website. I'm looking forward to populating this with thoughts about data, coding, problem-solving, teaching, and more!
 
 This website was made with [Quarto](https://quarto.org/docs/websites>).
