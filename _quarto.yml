@@ -7,9 +7,13 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - portfolio.qmd
       - blog.qmd
-
+    right: 
+      - icon: github
+        href: https://www.github.com/jdsferra
+      - icon: linkedin
+        href: https://www.linkedin.com/in/joe-sferra
 format:
   html:
     theme: lux

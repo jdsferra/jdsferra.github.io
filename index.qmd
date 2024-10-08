@@ -4,13 +4,12 @@ title: "Joe Sferra"
 
 Data professional finishing my fellowship at [NYC Data Science Academy](http://www.nycdatascience.com). I am working on a capstone project to provide a report card on the health of a business via documenting executive turnover. Experienced in SQL, Python, and R.
 
-I grew up in Ohio and earned a PhD in music composition at SUNY-Stony Brook. Over eight years, I taught music theory and composition at Stony Brook, Earlham, Vassar, SUNY-Potsdam, and the Cleveland Institute of Music. I presented at six academic conferences, published three peer-reviewed works, and was featured as a clarinetist on two professional albums. I now live in the New York metropolitan area.  
+I recently completed an internship at [Articulate.AI](https://articulateai.com/) that involved collaborating on the redesign of a no-code chatbot interface and produced a series of demo videos. I analyzed chatbot logs to suggest revisions to clients' bots and assisted in the onboarding process. 
+
+I grew up in Ohio and earned a PhD in music composition at SUNY-Stony Brook. Over eight years, I taught music theory and composition at Stony Brook, Earlham, Vassar, SUNY-Potsdam, and the Cleveland Institute of Music. I presented at six academic conferences, published three peer-reviewed works, and was featured as a clarinetist on two professional albums. I now live in the New York metropolitan area and am looking for full-time data analyst/scientist roles.  
 
 My background as a musician and teacher means that I have a unique approach to problem-solving that combines creativity and analytical skills. I have a proven record of translating complex ideas into concrete solutions for diverse audiences. Brainstorming and collaborating are some of my favorite things to do.  
 
-You can view my coding projects on [Github](http://www.github.com/jdsferra) and blog posts about these projects [here](http://www.nycdatascience.com/blog/author/jdsferra).  
+Check out the portfolio tab, which includes my data analytics and data science projects with links to code, deeper blog posts about the projects, and videos discussing my approach. I'm looking forward to populating my personal blog here with more thoughts about data, education, creative problem solving, statistics, coding, music, and more!
 
-Find me on [LinkedIn](http://www.linkedin.com/in/joe-sferra)!
-
-
-![ ](/assets/Headshot.jpg)
+![ ](/assets/headshot 10-24.png){width=70% height=70% fig-align="center"}
