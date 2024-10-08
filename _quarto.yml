@@ -2,8 +2,10 @@ project:
   type: website
 
 website:
-  title: "Joe Sferra's Website"
+  title: "Joe Sferra"
+  favicon: assets/favicon.png
   navbar:
+    #title: false
     left:
       - href: index.qmd
         text: Home
