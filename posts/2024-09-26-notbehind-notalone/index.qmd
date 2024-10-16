@@ -9,7 +9,7 @@ draft: false
 ---
 ![ ](/posts/2024-09-26-notbehind-notalone/notbehindpersonal.png)
 
-During my career as a music theory professor, I saw the same freshmen in my classroom five days a week. Our classroom, inevitably, became the site not just of learning a difficult subject at a fast pace, but also of discussions about what strategies could help you do that. As a Data Science at NYCDSA, I’ve continued to rely on these strategies and wanted to share some of them with you as you a coding bootcamp. Writing these thoughts out, I found all of them revolving around two major ideas: 1. You’re not behind. 2. You’re not alone.
+During my career as a music theory professor, I saw the same freshmen in my classroom five days a week. Our classroom, inevitably, became the site not just of learning a difficult subject at a fast pace, but also of discussions about what strategies could help you do that. As a Data Science Fellow at NYCDSA, I’ve continued to rely on these strategies and wanted to share some of them with you as you a coding bootcamp. Writing these thoughts out, I found all of them revolving around two major ideas: 1. You’re not behind. 2. You’re not alone.
 
 ## You're Not Behind
 When you first see the extent of a bootcamp curriculum, you may feel overwhelmed. It has to be that wide to address all the foundational knowledge for today’s tech stacks and job market. With so much to learn, it’s easy to feel like you are always behind. 

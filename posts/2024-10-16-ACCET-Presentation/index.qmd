@@ -1,0 +1,20 @@
+---
+title: "ACCET Faculty Professional Development Day Wrap-Up"
+description: "Sharing about presenting at a professional development day last week."
+author: Joe Sferra
+date: 10-16-2024
+categories: [Education, AI]
+image: ACCET_presentation_banner.png
+draft: false
+---
+![ ](/posts/2024-10-16-ACCET-Presentation/ACCET_presentation_banner.png)
+
+It was surreal to get to present alongside Vivian Zhang as part of the ACCET Faculty Professional Development Day last week. [ACCET](https://www.accet.org) is an accrediting body focusing on continuing education and accredits NYC Data Science Academy. As somebody who has spent a great deal of time in the classroom and on Zoom presentations like this, it was fun to get back into my element and present!  
+
+Vivian's introduction to AI was superb, but what I found most impressive about her presentation was her ability to respond extemporaneously to questions from the Zoom chat. The chat had about 125 participants, and a lot of them had questions they wanted answered! The chat was full of educators, so lots of questions centered around plagiarism and how to hold students to a meaningful standard despite the power of generative AI. There were questions about Tesla, housekeeping robots, what work AI should be doing, and many more.
+
+In my portion of the presentation, I spoke about a use case for AI in an educational setting, namely [Articulate.AI](https://www.articulateai.com) where I interned this summer, and am now on a contract as a Pre-Sales Data Scientist. After the flurry of questions about all of AI's capabilities, I honed in on a specific use case of AI as a way of streamlining the work of an admissions or enrollment office. As an educator, I found myself sending lots of emails to students with the same exact information over and over. This bot could automate a lot of that work, but more importantly, tailor its approach to students by asking them questions and even giving them recommendations. It was very cool to show off some of what makes the bot work to a big group of educators, and I had a great time.
+
+![Just a little snippet of what I showed. Click Articulate's link to see more!](/posts/2024-10-16-ACCET-Presentation/articulate snippet.jpg){width=80% height=80% fig-align="center"}
+
+Thank you to Vivian for this opportunity! Her mentorship has been incredible and I am very grateful :). 
