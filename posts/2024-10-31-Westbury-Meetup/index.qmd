@@ -10,7 +10,7 @@ draft: false
 ![ ](/posts/2024-10-31-Westbury-Meetup/trusttheprocessing.jpg)  
 
 
-Last night, I attended the first in a series of yearly events hosted by SUNY-Old Westbury. I found it through the Long Island Data Analytics Meetup Group and I'm really glad I went. After we got some pizza and hooked up to the WiFi, Professor Asok Basawapatna took us through a great project on baseball pitches that he's been working on. 
+Last night, I attended the first in a series of yearly events hosted by SUNY-Old Westbury. I found it through the Long Island Data Analytics Meetup Group and I'm really glad I went. After we got some pizza and hooked up to the WiFi, Professor Ashok Basawapatna took us through a great project on baseball pitches that he's been working on. 
 
 The project involved processing data from [pybaseball](https://pypi.org/project/pybaseball/2.0.0/). I was surprised at the granular level of detail that the dataset had about every pitch thrown in an MLB game. Dr. Basawapatna mentioned that this attention to detail really surged in the wake of the success of the 2002 Oakland Athletics, AKA the "Moneyball" season. It seemed like you could reanimate the entire game given all the details in the data, but we concentrated on pitches.
 
