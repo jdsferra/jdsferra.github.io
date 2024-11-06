@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Joe Sferra">
-<meta name="dcterms.date" content="2024-10-30">
+<meta name="dcterms.date" content="2024-11-07">
 <meta name="description" content="Recreating a tool I used in the music theory classroom with Python.">
 
 <title>Making a Twelve-Tone Matrix Generator in Python – Joe Sferra</title>
@@ -104,7 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -113,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -188,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 30, 2024</p>
+        <p class="date">November 7, 2024</p>
       </div>
     </div>
     
@@ -225,25 +224,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="meeting-the-matrix" class="level2">
 <h2 class="anchored" data-anchor-id="meeting-the-matrix">Meeting the Matrix</h2>
-<p>The twelve-tone matrix is a tool that most college music students have run into at least once in their lives during a music theory course. For a lot of them, it becomes the bane of their existence, as it relies on an understanding of math that they haven’t used much. To add insult to injury, matrices are used for atonal music, the kind of music that isn’t always pleasant to listen to! I thought that by coding a matrix generator out in Python, I could atone for subjecting so many of my former students to this technique and learn a little something myself.</p>
+<p>The twelve-tone matrix is a tool that most college music students have run into at least once in their lives during a music theory course. For a lot of them, it becomes the bane of their existence, as it relies on an understanding of math that they haven’t used much. To add insult to injury, matrices are used for atonal music, the kind of music that isn’t always pleasant to listen to! I thought that by coding a matrix generator out in Python, I could atone for subjecting former students to this technique and learn a little something myself.</p>
 <p>To understand the matrix, we have to understand a little bit about music in the early twentieth century. At that time, musicians were reaching out to find new musical techniques to express themselves and their feelings about the world around them. Many felt adrift in the wake of conflicts like World War I, and to mirror that “adrift-ness” in their music, they abandoned the idea of tonality, or a central pitch that feels like “home” or the point of arrival in a piece of music. One technique they used to replace tonality (or to achieve “atonality”) was to use a “tone row”, a sequence of all 12 pitches in the chromatic scale, as their new “home”. The tone row gave them the opportunity to make music with wild new sounds and harmonies, but also some kind of “home” (even if it’s a whole lot harder to hear!). This row could be the basis for melodies, harmonies, and all the pitch decisions in a style of music that we call dodecaphonic, or 12-tone music.</p>
-<p><strong>Ruth Crawford Seeger’s String Quartet 1931 is a beautiful piece based on tone rows!</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/JvbuUzDRVes" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p>Ruth Crawford Seeger’s <em>String Quartet 1931</em> is a beautiful piece based on tone rows!</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/JvbuUzDRVes" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 <section id="pitch-class-space" class="level2">
 <h2 class="anchored" data-anchor-id="pitch-class-space">Pitch Class Space</h2>
 <p>This isn’t the place where we can learn all of the theory that we need to know to approach this, but I will try to hit a couple of the big concepts so that you can dip your toes in. Dodecaphonic music relies on two types of equivalence:</p>
 <section id="octave-equivalence" class="level4">
 <h4 class="anchored" data-anchor-id="octave-equivalence">Octave Equivalence</h4>
-<p>An <em>F#</em> on a keyboard is an <em>F#</em> everywhere. Two notes that are the same, but in different octaves, are effectively the same in our analysis.<br>
-and</p>
+<p>An <em>F#</em> on a keyboard is an <em>F#</em> everywhere. Two notes that have the same note name, but in different octaves, are effectively the same.</p>
 </section>
 <section id="enharmonic-equivalence" class="level4">
 <h4 class="anchored" data-anchor-id="enharmonic-equivalence">Enharmonic Equivalence</h4>
-<p>An <em>F#</em> is the same as a <em>Gb</em>. Two notes that would be on the same spot on the keyboard, but are spelled differently, are effectively the same in our analysis.</p>
-<p>Taking these two assumptions together, atonal music now exists in <strong>pitch class space</strong>, a theoretical space like a clock’s face. If you go above or below the range of 0 to 11, it flips back around into that range. If you go two past 11, you get 1. If you start moving below zero, say to -5, it flips back around to being 7.</p>
+<p>An <em>F#</em> is the same as a <em>Gb</em>. Two notes that would be on the same spot on the keyboard, but are spelled differently, are effectively the same.</p>
+<p>Taking these two assumptions together, atonal music now exists in <em>pitch class space</em>, a theoretical space like a clock’s face. If you go above or below the range of 0 to 11, it flips back around into that range. If you go two past 11, you get 1. If you start moving below zero, say to -5, it flips back around to being 7.</p>
 <p><img src="../../posts/2024-10-28-Matrix-Generator/pitch_class_space_clock.jpg" class="img-fluid"></p>
-<p>So before we start building our matrix, we need to put our numbers into pitch-class space. Think about this as the ground rules for our calculator. Here’s a function in Python:</p>
-<div id="bf4d725d" class="cell" data-execution_count="1">
+<p>So before we start building our matrix, we need to express pitches with numbers in pitch-class space. Think about this as the ground rules for our calculator. Here’s a function in Python:</p>
+<div id="69b2728f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> modconvert(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> num <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> num <span class="op">&lt;</span> <span class="dv">12</span>:</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num</span>
@@ -279,22 +278,22 @@ and</p>
 <blockquote class="blockquote">
 <p><strong><em>“WHOA this music only uses one sequence of pitches the whole time? Wouldn’t that get boring?”</em></strong></p>
 </blockquote>
-<p>The answer is <strong>YES</strong>. That’s why the twelve-tone matrix exists. It’s a way to give one row a bunch of transformations to use as the basis of the composition. These transformations imitate similar techniques from earlier classical music: <em>transposition</em>, <em>inversion</em>, and <em>retrograde</em>.</p>
+<p>The answer is <strong>YES</strong>. That’s why the twelve-tone matrix exists. It’s a way to give one row a bunch of transformations to use as the basis of the composition. These transformations imitate techniques from earlier classical music: <em>transposition</em>, <em>inversion</em>, and <em>retrograde</em>.</p>
 <section id="prime-inversion-retrograde-retrograde-inversion" class="level4">
 <h4 class="anchored" data-anchor-id="prime-inversion-retrograde-retrograde-inversion">Prime, Inversion, Retrograde, Retrograde Inversion</h4>
-<p><em>Prime forms</em> represent the original row, but transposed. The difference between the index numbers represents how many half steps the forms are away from each other. In the matrix, read left to right.</p>
-<p><em>Inversion forms</em> represent the original row, but inverted. If you measure the intervals of a prime row in pitch class space and then mirror them (go the opposite number of hours on the clock), you get the inversion forms. Read top to bottom.</p>
-<p><em>Retrograde</em> is Prime form read in reverse. Notice the numbering convention here. Read right to left.</p>
+<p><em>Prime forms</em> represent the original row, but transposed. The difference between the index numbers represents their difference in half steps. In the matrix, read left to right.</p>
+<p><em>Inversion</em> forms represent the original row, but inverted. If you measure the intervals of a prime row in pitch class space and then mirror them (go left from the first number instead of right), you get the inversion forms. Read top to bottom.</p>
+<p><em>Retrograde</em> is prime read in reverse. Notice the numbering convention. Read right to left.</p>
 <p><em>Retrograde Inversion</em> is the retrograde reading of the inversion. Read bottom to top. Note: not the inversion of the retrograde!</p>
 </section>
 <section id="expressing-row-forms-in-python" class="level4">
 <h4 class="anchored" data-anchor-id="expressing-row-forms-in-python">Expressing Row Forms in Python</h4>
-<p>My experience so far with learning data structures and algorithms is that you’re always trying to get down to the fewest number of calculations that you can possibly use. Don’t be inefficient. I really hope we don’t have to do all 48 calculations for this thing! And in fact we don’t! We’re going to do 12 transpositions of the original row and have them printed out to represent the whole matrix.</p>
+<p>My experience so far with learning data structures and algorithms is that you’re always trying to solve problems with the fewest number of calculations that you can possibly use. Don’t be inefficient. I really hope we don’t have to do all 48 calculations for this thing! And in fact we don’t! We’re going to do 12 transpositions of the original row and have them printed out to represent the whole matrix.</p>
 <p>This means we have to take a few steps in Python now. Let’s say that we’re going to take in a list of twelve integers as the prime row, numbered 0-11. We’re going to need to transpose this row and measure by how far we have to transpose it.</p>
 <p>Let’s do the first part, transposing a row.</p>
-<div id="b8162011" class="cell" data-execution_count="2">
+<div id="ce9691d8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Takes in a row and transposes every pitch class </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># by the same interval (opci- hours forward on the clock).</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By the same interval (opci- hours forward on the clock).</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints how it should look in the matrix</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transpose_print (row, opci):</span>
@@ -313,16 +312,16 @@ and</p>
 </div>
 <p>Ok, so this looks like most of the lines of our matrix, so we’re getting close! We can express the matrix as a series of transpositions of the prime row. Now we need to measure by how far we have to transpose. I’m going to make a list called “Torder” or transposition order. It will be twelve numbers long, representing all the transpositions we’ll need to do, and they will represent inversions of the intervals in the original row.</p>
 <p><strong>Before you look at the “Torder” function below, try to imagine what Torder will look like for myrow.</strong></p>
-<div id="6f0240f8" class="cell" data-execution_count="3">
+<div id="cfe665f7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>myrow <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">11</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">10</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_torder(row):</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># creates the list of intervals by which </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># you need to transpose and print the prime row</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># first el is always 0</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Creates the list of intervals by which </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># You need to transpose and print the prime row</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># First el is always 0</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    Torder <span class="op">=</span> [<span class="dv">0</span>]</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># append inversion of distance between each element and first element</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append inversion of distance between each element and first element</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">12</span>):</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> modconvert(row[<span class="dv">0</span>] <span class="op">-</span> row[x])</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        Torder.append(i)</span>
@@ -340,7 +339,7 @@ and</p>
 </section>
 <section id="the-code-solution" class="level2">
 <h2 class="anchored" data-anchor-id="the-code-solution">The Code Solution</h2>
-<div id="a6dd28c5" class="cell" data-execution_count="4">
+<div id="0aebc3ea" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper functions we have built so far</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> modconvert(num):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> num <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> num <span class="op">&lt;</span> <span class="dv">12</span>:</span>
@@ -355,49 +354,41 @@ and</p>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Naming convention to tighten matrix's looks up</span></span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(newrow.replace(<span class="st">'10'</span>, <span class="st">'T'</span>).replace(<span class="st">'11'</span>, <span class="st">'E'</span>))</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transpose_print (row, opci):</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    transposed <span class="op">=</span> [modconvert(x<span class="op">+</span>opci) <span class="cf">for</span> x <span class="kw">in</span> row]</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    newrow <span class="op">=</span> <span class="ss">f'P</span><span class="sc">{</span>transposed[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>transposed<span class="sc">}</span><span class="ss"> R</span><span class="sc">{</span>transposed[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Naming convention to tighten matrix's looks up</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(newrow.replace(<span class="st">'10'</span>, <span class="st">'T'</span>).replace(<span class="st">'11'</span>, <span class="st">'E'</span>))</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_torder(row):</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># creates the list of intervals by which </span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># you need to transpose and print the prime row</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># first el is always 0</span></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    Torder <span class="op">=</span> [<span class="dv">0</span>]</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># append inversion of distance between each element and first element</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">12</span>):</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> modconvert(row[<span class="dv">0</span>] <span class="op">-</span> row[x])</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>        Torder.append(i)</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Torder</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co"># NEW- assembling helper functions</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generatematrix(row):</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_torder(row):</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Creates the list of intervals by which </span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># You need to transpose and print the prime row</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># First el is always 0</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    Torder <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append inversion of distance between each element and first element</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">12</span>):</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> modconvert(row[<span class="dv">0</span>] <span class="op">-</span> row[x])</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        Torder.append(i)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Torder</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Assembling helper functions</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generatematrix(row):</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make Torder</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  Torder <span class="op">=</span> make_torder(row)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Printing Matrix</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"X  I</span><span class="sc">{</span><span class="st">' I'</span><span class="sc">.</span>join(<span class="bu">str</span>(el) <span class="cf">for</span> el <span class="kw">in</span> row)<span class="sc">}</span><span class="ss"> </span><span class="ch">\</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="ss">  X"</span>.replace(<span class="st">'10'</span>, <span class="st">'T'</span>).replace(<span class="st">'11'</span>, <span class="st">'E'</span>))</span>
 <span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make Torder</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  Torder <span class="op">=</span> make_torder(row)</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Printing Matrix</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"X  I</span><span class="sc">{</span><span class="st">' I'</span><span class="sc">.</span>join(<span class="bu">str</span>(el) <span class="cf">for</span> el <span class="kw">in</span> row)<span class="sc">}</span><span class="ss"> </span><span class="ch">\</span></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="ss">  X"</span>.replace(<span class="st">'10'</span>, <span class="st">'T'</span>).replace(<span class="st">'11'</span>, <span class="st">'E'</span>))</span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x <span class="kw">in</span> Torder:</span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>      transpose_print(row, x)</span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"X  RI</span><span class="sc">{</span><span class="st">'RI'</span><span class="sc">.</span>join(<span class="bu">str</span>(el) <span class="cf">for</span> el <span class="kw">in</span> row)<span class="sc">}</span><span class="ch">\</span></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="ss">  X"</span>.replace(<span class="st">'10'</span>, <span class="st">'T'</span>).replace(<span class="st">'11'</span>, <span class="st">'E'</span>))</span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>    myrow <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">11</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">10</span>]</span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>    generatematrix(myrow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x <span class="kw">in</span> Torder:</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>      transpose_print(row, x)</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"X  RI</span><span class="sc">{</span><span class="st">'RI'</span><span class="sc">.</span>join(<span class="bu">str</span>(el) <span class="cf">for</span> el <span class="kw">in</span> row)<span class="sc">}</span><span class="ch">\</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="ss">  X"</span>.replace(<span class="st">'10'</span>, <span class="st">'T'</span>).replace(<span class="st">'11'</span>, <span class="st">'E'</span>))</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>    myrow <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">11</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">10</span>]</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>    generatematrix(myrow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>X  I2 IE I6 I5 I4 I3 I0 I8 I9 I7 I1 IT   X
 P2 [2, E, 6, 5, 4, 3, 0, 8, 9, 7, 1, T] R2
@@ -415,7 +406,7 @@ P6 [6, 3, T, 9, 8, 7, 4, 0, 1, E, 5, 2] R6
 X  RI2RIERI6RI5RI4RI3RI0RI8RI9RI7RI1RIT  X</code></pre>
 </div>
 </div>
-<p>There you have it! Some places to take this next would be to make pitch class numbers and regular note spellings (like <em>Bb</em>) interchangeable, making a row class with transposition as a method, a way to check that your input row is a correct possible row, all kinds of things. But I hope that this was an interesting introduction. I’ve found combining my experience with music theory and coding to be very rewarding, so I want to thank you for reading this far!</p>
+<p>There you have it! Some places to take this next would be to make pitch class numbers and regular note spellings (like <em>Bb</em>) interchangeable, turning rows into a class with transposition as a method, a way to check that your input row is a correct possible row, MIDI playback, all kinds of things. But I hope that this was an interesting introduction. I’ve found combining my experience with music theory and coding to be very rewarding, so I want to thank you for reading this far!</p>
 <p><strong><em>Any questions? Want some more weird music recommendations?? Find me on LinkedIn!</em></strong></p>
 
 
@@ -514,7 +505,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/jdsferra\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
