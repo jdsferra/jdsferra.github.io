@@ -1,0 +1,27 @@
+---
+title: "Musical Scores as Data Visualizations"
+description: "Well, wait, are they?"
+author: Joe Sferra
+date: 12-5-2024
+categories: [Data Visualization, Music]
+image: gmj_excerpt.png
+draft: true
+---
+![](/posts/2024-12-5-Score-Gmj/gmj_excerpt.png)   
+
+## Spitballing on LinkedIn
+
+Last week, I was looking to put together a quick post for LinkedIn. It gets your profile to recruiters and hiring managers if you regularly post, hence why LinkedIn is full of repetitive plagiarist garbage. I've been thinking about data visualization a lot these days as part of my capstone project for NYC Data Science Academy. I was noticing that this project was scratching some creative itches like writing music does so I threw up a short post.
+
+I wanted to expand on what I was getting at in this post. I said that data visualization and writing music were very similar for me. In both, you're trying to clearly convey information to an audience (the stats/kpis/metrics to the business decision-maker vs. the musical notation to the performer). Similarly in both, there's a point in the process where you have to give over control to that audience for your work have any impact. At some point with the visualization, the proof of its quality has to be when it's given to somebody in order to inform a business decision. A pretty graph is great and all, but what does it *do*?  
+
+## Showing the Score   
+I posted an excerpt of one of my scores as an example of a musical job I did where I was really proud of the technical work of visualizing the score. This is an excerpt of my piece **Four Etudes on American Hymns** for solo clarinet. I had to hide a lot of otherwise standard parts of music notation like time signatures and barlines to make it legible while featuring the dense variety of notation that's here. Not to toot my own horn, but I really think this excerpt reflects a really subtle understanding of music notation software. 
+
+What has been equal parts frustrating and energizing about my career now is that I don't yet have this sort of subtle control over non-musical data visualization! I've had my fun with Seaborn and ggplot2 and I'm learning all the time, but I just know there are years of drilling with coding that I don't share with some of my colleagues. I do believe that my background as a musician allows me a unique perspective on problem-solving and creativity that I can share with my non-musical data friends!
+
+Check out my friend Sarah's interpretation of what this excerpt should sound like. The excerpt in the score example above starts at 6:49. I was so moved by Sarah's effort on my piece and her beautiful performance!
+
+{{< video https://www.youtube.com/watch?v=aEi33jHUChE>}}
+
+
