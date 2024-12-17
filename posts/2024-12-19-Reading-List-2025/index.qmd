@@ -1,0 +1,31 @@
+---
+title: "My 2025 Data Reading List"
+description: "I've got a fat stack of books I'm trying to read next year."
+author: Joe Sferra
+date: 12-11-2024
+categories: [Education]
+image: IMG_0962.jpg
+draft: false
+---
+![](/posts/2024-12-19-Reading-List-2025/IMG_0962.jpg)   
+
+## Resisting the Algorithm- Looking Around You
+
+As I've been studying how to write and maintain the kinds of data models that suggest you videos to watch or ads to click on, I've tried to be more aware of times when businesses are after my personal data.
+
+> Sure you can get this special item at this fast-food place, just download the app real quick!  
+
+> We need to know where you're located for the next 5 minutes or so, mind just sharing your location with us forever?  
+
+> Want to post a picture? We're gonna need all your pictures and control of your camera because... *throws smoke bomb*   
+
+It's just interesting to see how fads and fashions come and go, like trendy recipes, or what songs are hot on TikTok, and how much these 'memes' are fed and informed by our data. In the past few years, I've tried to step away from some of this to the extent that I can and live more off of my phone. I'm relying more on different kinds of physical media in my home to help me organize my life. That means listening to CD's and records I've amassed over the years, cooking recipes from formerly untouched cookbooks, and actually *reading* the books on my bookshelf.
+
+This experiment has been lovely. I've cooked classic Italian dinners with confidence reading from good recipes. I've read books: some I never would have bought but ended up on my shelf to surprise me, or books I've been holding onto for a long time without ever reading.
+
+![](/posts/2024-12-19-Reading-List-2025/IMG_0963.jpg)   
+I have records and CD's from my classmates, old professors, free bins outside music department offices, and family members as far back as my grandmother. Every listen feels unique and unlike a lot of the stuff I'm recommended by my apps or my friends. And while I feel maybe a little bit more distanced from current fashions and what's hip, the tradeoff is an incredible feeling of connection with all these friends and family, alive and dead. Listening to a record I know was on my uncle's turntable, or in another hopeful student's dorm room, gives even the most routine experience like chopping onions and listening to music a kind of poetry I won't be able to accurately describe here.
+
+## My Data Reading List
+![](/posts/2024-12-19-Reading-List-2025/IMG_0962.jpg)
+Here's a stack of data and tech books that I've been building up for a while now. Some of them I had before I even considered going into data, some I've tried to read a couple times and never finished, and others have already helped me complete projects and pass exams (Thank you, [Statquest!](https://statquest.org/)). There are other books out there that may be more pertinent or more up-to-date, but the common thread of these is that they're all already here-- on my bookshelf-- in my apartment. That's more than enough reason to give them a close look and see what I can pull out! I'm going to make a concerted effort to dig into every one of these books this year. And I hope to share some of that progress here!
