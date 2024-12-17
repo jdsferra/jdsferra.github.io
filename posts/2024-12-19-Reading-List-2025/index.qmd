@@ -2,7 +2,7 @@
 title: "My 2025 Data Reading List"
 description: "I've got a fat stack of books I'm trying to read next year."
 author: Joe Sferra
-date: 12-11-2024
+date: 12-19-2024
 categories: [Education]
 image: IMG_0962.jpg
 draft: false
