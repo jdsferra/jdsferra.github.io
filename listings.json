@@ -12,5 +12,13 @@
       "/posts/2024-10-16-ACCET-Presentation/index.html",
       "/posts/2024-09-26-notbehind-notalone/index.html"
     ]
+  },
+  {
+    "listing": "/portfolio.html",
+    "items": [
+      "/portfolio/2024-Real-Estate-ML/index.html",
+      "/portfolio/2024-Magnificent-Seven-Tracker/index.html",
+      "/portfolio/2024-NYT-Crossword/index.html"
+    ]
   }
 ]

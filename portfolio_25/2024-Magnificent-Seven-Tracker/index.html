@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-03-18">
+<meta name="description" content="Visualizing Stock Prices with R/Shiny.">
 
-<title>Joe Sferra</title>
+<title>Understanding The Magnificent Seven – Joe Sferra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-57edb72f74794eee757c494e7311646b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-57edb72f74794eee757c494e7311646b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,11 +77,11 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Joe Sferra</span>
     </a>
   </div>
@@ -90,15 +92,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./portfolio.html"> 
-<span class="menu-text">Portfolio</span></a>
+    <a class="nav-link" href="../../portfolio_25.html"> 
+<span class="menu-text">Portfolio_25</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -121,27 +123,80 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Understanding The Magnificent Seven</h1>
+                  <div>
+        <div class="description">
+          Visualizing Stock Prices with R/Shiny.
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 18, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<div class="quarto-figure quarto-figure-center">
+
+<p>My talk begins at 0:36.<br>
+</p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YA7wAn-CGq8?si=NiRKKXjWDgRHdrP" title="Start at :36" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p>The app is hosted <a href="https://jdsferra.shinyapps.io/Magnificent7/">here</a>, the code is <a href="https://github.com/jdsferra/MAGNIFICENT7">here</a>, and a blog post discussing the project in further detail is <a href="https://nycdatascience.com/blog/student-works/understanding-the-magnificent-seven-stocks/">here</a>.</p>
+<p>Interactive dashboard in R/Shiny examining the “Magnificent Seven” stocks while comparing their performance to the S&amp;P 500. While avoiding giving investing advice, I illustrate the Seven’s outsize share of the S&amp;P’s total market cap, suggesting that these companies’ performances (boosted by Covid-19 and the craze for AI) are inflating the S&amp;P’s overall performance.</p>
+<p>In the app, you can customize several visualizations of the Mag7 stocks and their performance compared to the S&amp;P.</p>
+<div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="./assets/Sferra_Joe Headshot.jpg" class="quarto-figure quarto-figure-center figure-img" style="width:55.0%;height:55.0%"></p>
+<p><img src="../../assets/mag7/mag7_homepage.png" class="quarto-figure quarto-figure-left figure-img" style="width:100.0%;height:100.0%"></p>
 </figure>
 </div>
-<p>Data professional and alumnus of <a href="http://www.nycdatascience.com">NYC Data Science Academy</a>, demonstrating expertise in SQL, Python, and R. Currently contracting as a data engineer, including building data marts and implementing automation and data integrity solutions. I also interned and worked as a Pre-Sales Data Scientist at <a href="https://www.arklex.ai/">Arklex.AI</a>, where I collaborated on the design of a no-code chatbot interface, produced demo videos, and analyzing chatbot logs to improve client performance.</p>
-<p>Ohio native with a PhD in music composition from SUNY-Stony Brook. My eight years teaching at institutions including Stony Brook, Earlham, Vassar, SUNY-Potsdam, and the Cleveland Institute of Music developed my ability to communicate complex concepts clearly. My musical background includes presentations at six academic conferences, three peer-reviewed publications, and professional recordings as a clarinetist.</p>
-<p>Now based in the New York metro area, I’m seeking full-time roles in data and sales engineering. My unique background combines creative and analytical skills with a proven ability to translate complex ideas into concrete solutions for diverse audiences.</p>
-<p>The portfolio section showcases my data analytics and data science projects with links to code, detailed blog posts, and video walkthroughs. My personal blog features thoughts on data, education, creative problem-solving, statistics, coding, music, and more!</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="../../assets/mag7/mag7_fig1.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
+<figcaption>Monthly averaged price data from 2015 to 2024.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="../../assets/mag7/mag7_fig2.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
+<figcaption>Percent change in META price compared to the S&amp;P 500 from 2022 to present. Both values were negative until early 2024.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="../../assets/mag7/mag7_fig5.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
+<figcaption>At year end of 2023, the Seven accounted for a quarter of the S&amp;P 500’s $47.7 trillion market cap.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="../../assets/mag7/mag7_fig6.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
+<figcaption>Bar chart of S&amp;P 500’s market cap from year-end 2014. The considerable contraction in 2022 is part of a larger stock market decline in 2022 due to the aftermath of Covid and the Russian invasion of Ukraine.</figcaption>
+</figure>
+</div>
 
 
 
@@ -238,7 +293,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jdsferra\.github\.io\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

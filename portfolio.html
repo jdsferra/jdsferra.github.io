@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,7 +69,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -125,16 +185,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#understanding-the-magnificent-seven" id="toc-understanding-the-magnificent-seven" class="nav-link active" data-scroll-target="#understanding-the-magnificent-seven">Understanding The Magnificent Seven</a></li>
-  <li><a href="#predicting-real-estate-prices-using-machine-learning" id="toc-predicting-real-estate-prices-using-machine-learning" class="nav-link" data-scroll-target="#predicting-real-estate-prices-using-machine-learning">Predicting Real Estate Prices Using Machine Learning</a></li>
-  <li><a href="#words-to-learn-to-solve-the-new-york-times-crossword-puzzle" id="toc-words-to-learn-to-solve-the-new-york-times-crossword-puzzle" class="nav-link" data-scroll-target="#words-to-learn-to-solve-the-new-york-times-crossword-puzzle">Words to Learn to Solve the New York Times Crossword Puzzle</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -157,81 +209,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Check out my projects, detailing proficiency in data visualization, predictive modeling, Python, R, and SQL.</p>
-<section id="understanding-the-magnificent-seven" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-the-magnificent-seven">Understanding The Magnificent Seven</h2>
-<p>Interactive dashboard in R/Shiny examining the “Magnificent Seven” stocks while comparing their performance to the S&amp;P 500. While avoiding giving investing advice, I illustrate the Seven’s outsize share of the S&amp;P’s total market cap, suggesting that these companies’ performances (boosted by Covid-19 and the craze for AI) are inflating the S&amp;P’s overall performance.</p>
-<p>In the app, you can customize several visualizations of the Mag7 stocks and their performance compared to the S&amp;P.</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="./assets/mag7/mag7_homepage.png" class="quarto-figure quarto-figure-left figure-img" style="width:100.0%;height:100.0%"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="./assets/mag7/mag7_fig1.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
-<figcaption>Monthly averaged price data from 2015 to 2024.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="./assets/mag7/mag7_fig2.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
-<figcaption>Percent change in META price compared to the S&amp;P 500 from 2022 to present. Both values were negative until early 2024.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="./assets/mag7/mag7_fig5.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
-<figcaption>At year end of 2023, the Seven accounted for a quarter of the S&amp;P 500’s $47.7 trillion market cap.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="./assets/mag7/mag7_fig6.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
-<figcaption>Bar chart of S&amp;P 500’s market cap from year-end 2014. The considerable contraction in 2022 is part of a larger stock market decline in 2022 due to the aftermath of Covid and the Russian invasion of Ukraine.</figcaption>
-</figure>
-</div>
-<p>The app is hosted <a href="https://jdsferra.shinyapps.io/Magnificent7/">here</a>, the code is <a href="https://github.com/jdsferra/MAGNIFICENT7">here</a>, and a blog post discussing the project in further detail is <a href="https://nycdatascience.com/blog/student-works/understanding-the-magnificent-seven-stocks/">here</a>.</p>
-<p>My talk begins at 0:36.<br>
-</p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YA7wAn-CGq8?si=NiRKKXjWDgRHdrP" title="Start at :36" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
-</section>
-<section id="predicting-real-estate-prices-using-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="predicting-real-estate-prices-using-machine-learning">Predicting Real Estate Prices Using Machine Learning</h2>
-<p>Implemented multiple machine learning models in Python and Scikit-learn to predict house prices using the Ames dataset from Kaggle. The process involved data cleaning and preparation, feature engineering, preprocessing, and modeling. Models included Linear Regression, Penalized Linear Regression, Support Vector Machines, Random Forests, and Gradient Boosting.</p>
-<p>My approach highlighted the trade-offs between accuracy and interpretability in ML models. Multiple Linear Regression was my endpoint of interpretability over accuracy, while Gradient Boosting was my endpoint of accuracy over interpretability. By doing a deep dive on these two models, I illustrate the endpoints of accessibility and accuracy in order to inform realtors and home buyers and sellers about the best ways to approach the real estate market. My analysis suggests that big factors like square footage and number of bedrooms and bathrooms factors into home prices, but preparing the data with subtler interactions like “rooms multiplied by bedrooms” can help ML models discover deeper differences between similar homes and yield more accurate sale price predictions.</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="./assets/ames/ames_tradeoff.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
-<figcaption>As ML models increase in accuracy, they decrease in interpretability, and vice versa.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="./assets/ames/ames_SLR.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
-<figcaption>Simple Linear Regression: Highly Interpretable, but less accurate than other models.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="./assets/ames/ames_boosting.png" style="width:100.0%;height:100.0%" class="figure-img"></p>
-<figcaption>Gradient Boosting: Highly Accurate, but less interpretable than other models.</figcaption>
-</figure>
-</div>
-<p>My code can be found <a href="https://github.com/jdsferra/AMES">here</a> and a blog post discussing the project in further detail is <a href="https://nycdatascience.com/blog/student-works/the-notebook-and-the-black-box-ml-in-ames/">here</a>.</p>
-<p>My talk begins at 0:35.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/y8DqPNRe7_U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="words-to-learn-to-solve-the-new-york-times-crossword-puzzle" class="level2">
-<h2 class="anchored" data-anchor-id="words-to-learn-to-solve-the-new-york-times-crossword-puzzle">Words to Learn to Solve the New York Times Crossword Puzzle</h2>
-<p>This analysis is targeted towards people who have done some crossword puzzles but want to take their efforts more seriously and improve their game. While simply practicing doing crossword puzzles consistently is obviously a great way to improve, analysis on a <a href="https://www.kaggle.com/datasets/darinhawley/new-york-times-crossword-clues-answers-19932021">dataset</a> containing all the clues and answers from NYT puzzles between 1993-2021 reveals some trends about the words that commonly feature so that players can study them away from the puzzles and speed up their improvement.</p>
-<p>After some descriptive analysis of the dataset using Python, including examining missing values and some feature engineering involving word length, days of the week, and vowel ratios of the words. After briefly analyzing the most-common clues, I make a list of the most commonly-featured words in these puzzles. This list isn’t a great study tool, though, because a lot of these words are already known to the average English-language speaker.</p>
-<p>So, I cross-reference this list with a second <a href="https://www.wordfrequency.info/samples.asp">list</a>, 5,050 of the most common and currently-used words in the English language. By eliminating these words from the puzzle list, I create a valuable study guide: a list of words that are both common in the NYT Crossword puzzle, but are perhaps not known to the average person starting out. <img src="./assets/crosswords/crosswords_page1.png" class="quarto-figure quarto-figure-left" style="width:100.0%;height:100.0%"> <img src="./assets/crosswords/crosswords_page2.png" class="quarto-figure quarto-figure-left" style="width:100.0%;height:100.0%"> My code can be found <a href="https://github.com/jdsferra/Crosswords">here</a> and a blog post discussing the project in further detail is <a href="https://nycdatascience.com/blog/student-works/words-to-learn-to-solve-the-new-york-times-crossword/">here</a>.</p>
-<p><em>Thanks for taking a look!</em></p>
+<p>Data Portfolio Including Project with Python, R, and Machine Learning</p>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1721016000000" data-listing-file-modified-sort="1744742391909" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="227">
+<div class="thumbnail">
+<p><a href="./portfolio/2024-Real-Estate-ML/index.html" class="no-external"></a></p><a href="./portfolio/2024-Real-Estate-ML/index.html" class="no-external">
+<p class="card-img-top"><img src="assets/ames/ames_tradeoff.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./portfolio/2024-Real-Estate-ML/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./portfolio/2024-Real-Estate-ML/index.html" class="no-external">Predicting Real Estate Prices Using Machine Learning</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./portfolio/2024-Real-Estate-ML/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./portfolio/2024-Real-Estate-ML/index.html" class="no-external">Exploring Accuracy and Interpretability in ML.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./portfolio/2024-Real-Estate-ML/index.html" class="no-external">
+<div class="listing-date">
+Jul 15, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1710734400000" data-listing-file-modified-sort="1744742364996" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="216">
+<div class="thumbnail">
+<p><a href="./portfolio/2024-Magnificent-Seven-Tracker/index.html" class="no-external"></a></p><a href="./portfolio/2024-Magnificent-Seven-Tracker/index.html" class="no-external">
+<p class="card-img-top"><img src="assets/mag7/mag7_homepage.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./portfolio/2024-Magnificent-Seven-Tracker/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./portfolio/2024-Magnificent-Seven-Tracker/index.html" class="no-external">Understanding The Magnificent Seven</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./portfolio/2024-Magnificent-Seven-Tracker/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./portfolio/2024-Magnificent-Seven-Tracker/index.html" class="no-external">Visualizing Stock Prices with R/Shiny.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./portfolio/2024-Magnificent-Seven-Tracker/index.html" class="no-external">
+<div class="listing-date">
+Mar 18, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1702702800000" data-listing-file-modified-sort="1744742394327" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="228">
+<div class="thumbnail">
+<p><a href="./portfolio/2024-NYT-Crossword/index.html" class="no-external"></a></p><a href="./portfolio/2024-NYT-Crossword/index.html" class="no-external">
+<p class="card-img-top"><img src="assets/crosswords/crosswords_page1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./portfolio/2024-NYT-Crossword/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./portfolio/2024-NYT-Crossword/index.html" class="no-external">Words to Learn to Solve the New York Times Crossword Puzzle</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./portfolio/2024-NYT-Crossword/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./portfolio/2024-NYT-Crossword/index.html" class="no-external">Using Python on NYT data to make a study list of 170 Words.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./portfolio/2024-NYT-Crossword/index.html" class="no-external">
+<div class="listing-date">
+Dec 16, 2023
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
