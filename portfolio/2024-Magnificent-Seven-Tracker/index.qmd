@@ -1,0 +1,25 @@
+---
+title: "Understanding The Magnificent Seven"
+description: "Visualizing Stock Prices with R/Shiny."
+date: 03-18-2024
+draft: false
+---
+My talk begins at 0:36.     
+{{< video https://www.youtu.be/watch?v=YA7wAn-CGq8?si=NiRKKXjWDgRHdrP 
+    title='Start at :36' >}}
+    
+The app is hosted [here](https://jdsferra.shinyapps.io/Magnificent7/), the code is [here](https://github.com/jdsferra/MAGNIFICENT7), and a blog post discussing the project in further detail is [here](https://nycdatascience.com/blog/student-works/understanding-the-magnificent-seven-stocks/).
+
+Interactive dashboard in R/Shiny examining the "Magnificent Seven" stocks while comparing their performance to the S&P 500. While avoiding giving investing advice, I illustrate the Seven's outsize share of the S&P's total market cap, suggesting that these companies' performances (boosted by Covid-19 and the craze for AI) are inflating the S&P's overall performance.
+
+In the app, you can customize several visualizations of the Mag7 stocks and their performance compared to the S&P.
+  
+![ ](/assets/mag7/mag7_homepage.png){width=100% height=100% fig-align="left"} 
+
+![Monthly averaged price data from 2015 to 2024.](/assets/mag7/mag7_fig1.png){width=100% height=100% fig-align="left"}
+
+![Percent change in META price compared to the S&P 500 from 2022 to present. Both values were negative until early 2024.](/assets/mag7/mag7_fig2.png){width=100% height=100% fig-align="left"}     
+
+![At year end of 2023, the Seven accounted for a quarter of the S&P 500's $47.7 trillion market cap.](/assets/mag7/mag7_fig5.png){width=100% height=100% fig-align="left"}  
+
+![Bar chart of S&P 500's market cap from year-end 2014. The considerable contraction in 2022 is part of a larger stock market decline in 2022 due to the aftermath of Covid and the Russian invasion of Ukraine.](/assets/mag7/mag7_fig6.png){width=100% height=100% fig-align="left"}

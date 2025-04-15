@@ -1,0 +1,20 @@
+---
+title: "Predicting Real Estate Prices Using Machine Learning"
+description: "Exploring Accuracy and Interpretability in ML."
+date: 07-15-2024
+draft: false
+---
+My talk begins at 0:35.
+{{< video https://www.youtube.com/watch?v=y8DqPNRe7_U >}}
+
+My code can be found [here](https://github.com/jdsferra/AMES) and a blog post discussing the project in further detail is [here](https://nycdatascience.com/blog/student-works/the-notebook-and-the-black-box-ml-in-ames/).
+
+Implemented multiple machine learning models in Python and Scikit-learn to predict house prices using the Ames dataset from Kaggle. The process involved data cleaning and preparation, feature engineering, preprocessing, and modeling. Models included Linear Regression, Penalized Linear Regression, Support Vector Machines, Random Forests, and Gradient Boosting.
+
+My approach highlighted the trade-offs between accuracy and interpretability in ML models. Multiple Linear Regression was my endpoint of interpretability over accuracy, while Gradient Boosting was my endpoint of accuracy over interpretability. By doing a deep dive on these two models, I illustrate the endpoints of accessibility and accuracy in order to inform realtors and home buyers and sellers about the best ways to approach the real estate market. My analysis suggests that big factors like square footage and number of bedrooms and bathrooms factors into home prices, but preparing the data with subtler interactions like "rooms multiplied by bedrooms" can help ML models discover deeper differences between similar homes and yield more accurate sale price predictions.
+
+![As ML models increase in accuracy, they decrease in interpretability, and vice versa.](/assets/ames/ames_tradeoff.png){width=100% height=100% fig-align="left"}
+
+![Simple Linear Regression: Highly Interpretable, but less accurate than other models.](/assets/ames/ames_SLR.png){width=100% height=100% fig-align="left"}   
+
+![Gradient Boosting: Highly Accurate, but less interpretable than other models.](/assets/ames/ames_boosting.png){width=100% height=100% fig-align="left"} 

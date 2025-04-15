@@ -1,15 +1,9 @@
----
-title: "Joe Sferra"
----
+![ ](/assets/Sferra_Joe Headshot.jpg){width=55% height=55% fig-align="center"}
 
-Data professional finishing my fellowship at [NYC Data Science Academy](http://www.nycdatascience.com). I am working on a capstone project to provide a report card on the health of a business via documenting executive turnover. Experienced in SQL, Python, and R.
+Data professional and alumnus of [NYC Data Science Academy](http://www.nycdatascience.com), demonstrating expertise in SQL, Python, and R. Currently contracting as a data engineer, including building data marts and implementing automation and data integrity solutions. I also interned and worked as a Pre-Sales Data Scientist at [Arklex.AI](https://www.arklex.ai/), where I collaborated on the design of a no-code chatbot interface, produced demo videos, and analyzing chatbot logs to improve client performance.
 
-I recently completed an internship at [Articulate.AI](https://articulateai.com/) that involved collaborating on the redesign of a no-code chatbot interface and produced a series of demo videos. I analyzed chatbot logs to suggest revisions to clients' bots and assisted in the onboarding process. I am now on a contract there as a Pre-Sales Data Scientist. 
+Ohio native with a PhD in music composition from SUNY-Stony Brook. My eight years teaching at institutions including Stony Brook, Earlham, Vassar, SUNY-Potsdam, and the Cleveland Institute of Music developed my ability to communicate complex concepts clearly. My musical background includes presentations at six academic conferences, three peer-reviewed publications, and professional recordings as a clarinetist.
 
-I grew up in Ohio and earned a PhD in music composition at SUNY-Stony Brook. Over eight years, I taught music theory and composition at Stony Brook, Earlham, Vassar, SUNY-Potsdam, and the Cleveland Institute of Music. I presented at six academic conferences, published three peer-reviewed works, and was featured as a clarinetist on two professional albums. I now live in the New York metropolitan area and am seeking full-time roles as an analyst or sales engineer.  
+Now based in the New York metro area, I'm seeking full-time roles in data and sales engineering. My unique background combines creative and analytical skills with a proven ability to translate complex ideas into concrete solutions for diverse audiences.
 
-My background as a musician and teacher means that I have a unique approach to problem-solving that combines creativity and analytical skills. I have a proven record of translating complex ideas into concrete solutions for diverse audiences. Brainstorming and collaborating are some of my favorite things to do.  
-
-Check out the portfolio tab, which includes my data analytics and data science projects with links to code, deeper blog posts about the projects, and videos discussing my approach. I'm looking forward to populating my personal blog here with more thoughts about data, education, creative problem solving, statistics, coding, music, and more!
-
-![ ](/assets/Sferra_Joe Headshot.jpg){width=70% height=70% fig-align="center"}
+The portfolio section showcases my data analytics and data science projects with links to code, detailed blog posts, and video walkthroughs. My personal blog features thoughts on data, education, creative problem-solving, statistics, coding, music, and more!
